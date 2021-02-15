@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Icon from "react-native-vector-icons/Fontisto";
 
 export default function App() {
   return (
@@ -9,49 +8,35 @@ export default function App() {
         <Text style={styles.titleText}>New Mood</Text>
       </View>
       <View style={styles.cardContainer}>
-        <TouchableOpacity style={styles.cardIconContainer} delayPressIn={0}>
+        <View style={styles.cardIconContainer}>
           <Text style={styles.cardIcon}>😎</Text>
-        </TouchableOpacity>
+        </View>
         <View style={styles.cardBase}>
           <View style={styles.cardTopContainer}>
-            <Text style={styles.cardTitle}>Happy & Chill</Text>
-            <Text style={styles.cardInfo}>
-              you last felt this way was on Tuesday
-            </Text>
+            <Text style={styles.cardTitle}>MOOD NAME</Text>
+            <Text style={styles.cardInfo}>mood info such as time and date</Text>
           </View>
           <View style={styles.cardDataContainer}>
-            <Text style={styles.cardQuickData}>2 Day Stability Streak</Text>
-            <Text style={styles.cardCompareData}>General Mood Increase</Text>
+            <Text style={styles.cardQuickData}>Quicklook data</Text>
+            <Text style={styles.cardCompareData}>Compare data</Text>
           </View>
         </View>
       </View>
-      <View style={styles.clockContainer}>
-        <View style={styles.dialContainer}>
-          <Text style={styles.dialFinalFaded}>3</Text>
-          <Text style={styles.dialSecondaryFaded}>2</Text>
-          <Text style={styles.dialSelected}>- 1 -</Text>
-          <Text style={styles.dialSecondaryFaded}>12</Text>
-          <Text style={styles.dialFinalFaded}>11</Text>
-        </View>
-        <View style={styles.dialContainer}>
-          <Text style={styles.dialFinalFaded}>22</Text>
-          <Text style={styles.dialSecondaryFaded}>21</Text>
-          <Text style={styles.dialSelected}>- 20 -</Text>
-          <Text style={styles.dialSecondaryFaded}>19</Text>
-          <Text style={styles.dialFinalFaded}>18</Text>
-        </View>
+      <View style={styles.dialContainer}>
+        <Text style={styles.dialFinalFaded}>22</Text>
+        <Text style={styles.dialSecondaryFaded}>21</Text>
+        <Text style={styles.dialSelected}>- 20 -</Text>
+        <Text style={styles.dialSecondaryFaded}>19</Text>
+        <Text style={styles.dialFinalFaded}>18</Text>
       </View>
       <View style={styles.addButtonContainer}>
-        <TouchableOpacity
-          style={styles.addButtonBase}
-          onPress={() => alert("hello")}
-        >
+        <TouchableOpacity style={styles.addButtonBase}>
           <Text style={styles.addButtonTitle}>Add Mood</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.backButtonContainer}>
         <TouchableOpacity style={styles.backButtonBase}>
-          <Icon name="arrow-left-l" style={styles.backButtonIcon} />
+          <Text style={styles.backButtonIcon}>👈</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -62,65 +47,62 @@ export default function App() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: "rgba(0,0,0,0.025)",
   },
   titleContainer: {
     flex: 1,
+    backgroundColor: "purple",
     alignItems: "center",
     justifyContent: "center",
   },
   titleText: {
-    color: "rgba(0,0,0,0.25)",
+    backgroundColor: "darkorchid",
+    color: "black",
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 2,
     fontSize: 18,
     fontWeight: "bold",
   },
   cardContainer: {
     flex: 3,
+    backgroundColor: "red",
     alignItems: "center",
-    justifyContent: "center",
   },
   cardIconContainer: {
-    borderRadius: 24,
-    borderWidth: 2,
-    borderColor: "rgba(0,0,0,0.01)",
-    width: 75,
-    height: 75,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "white",
-    elevation: 20,
+    backgroundColor: "fuchsia",
+    borderRadius: 18,
+    zIndex: 1,
   },
   cardIcon: {
     color: "black",
-    fontSize: 36,
+    fontSize: 48,
+    padding: 12,
   },
   cardBase: {
-    borderRadius: 36,
-    borderWidth: 2,
-    borderColor: "rgba(0,0,0,0.01)",
-    bottom: 50,
-    height: 250,
-    width: 350,
-    justifyContent: "center",
-    backgroundColor: "white",
-    elevation: 18,
+    backgroundColor: "orange",
+    borderRadius: 24,
+    bottom: "15%",
+    height: "85%",
+    width: "75%",
+    alignItems: "center",
+    justifyContent: "space-evenly",
   },
   cardTopContainer: {
-    marginBottom: 36,
+    backgroundColor: "teal",
     alignItems: "center",
     justifyContent: "center",
   },
   cardTitle: {
     color: "black",
-    paddingVertical: 4,
     fontSize: 24,
     fontWeight: "bold",
   },
   cardInfo: {
-    color: "rgba(0,0,0,0.5)",
+    color: "black",
     fontStyle: "italic",
   },
   cardDataContainer: {
+    backgroundColor: "orchid",
     alignItems: "center",
   },
   cardQuickData: {
@@ -129,20 +111,18 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   cardCompareData: {
-    color: "lightgreen",
+    color: "green",
     fontWeight: "bold",
-  },
-  clockContainer: {
-    flexDirection: "row",
   },
   dialContainer: {
     flex: 3,
+    backgroundColor: "yellow",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
   },
   dialFinalFaded: {
     fontSize: 24,
-    color: "rgba(0,0,0,0.05)",
+    color: "rgba(0,0,0,0.10)",
   },
   dialSecondaryFaded: {
     color: "rgba(0,0,0,0.25)",
@@ -154,17 +134,17 @@ const styles = StyleSheet.create({
   },
   addButtonContainer: {
     flex: 1,
+    backgroundColor: "blue",
     alignItems: "center",
     justifyContent: "center",
   },
   addButtonBase: {
     backgroundColor: "black",
-    borderRadius: 25,
-    height: "55%",
-    width: "55%",
+    borderRadius: 100,
+    height: "50%",
+    width: "50%",
     justifyContent: "center",
     alignItems: "center",
-    elevation: 12,
   },
   addButtonTitle: {
     color: "white",
@@ -172,19 +152,21 @@ const styles = StyleSheet.create({
   },
   backButtonContainer: {
     flex: 1,
+    backgroundColor: "green",
     alignItems: "center",
     justifyContent: "center",
   },
   backButtonBase: {
     backgroundColor: "black",
+    // height: "25%",
+    // // width: "25%",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 100,
-    elevation: 8,
   },
   backButtonIcon: {
     color: "white",
-    fontSize: 24,
+    fontSize: 18,
     padding: 12,
   },
 });
